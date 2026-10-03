@@ -53,12 +53,12 @@ use employee;
 
 2.	Departments TABLE:
 
-create table departments (department_id int primary key,department_name varchar(100) not null unique);
+create table Departments (department_id int primary key,department_name varchar(100) not null unique);
 
 3.	Location TABLE:
 
-create table location (location_id int auto_increment primary key, location varchar(30) not null unique);
+create table Location (location_id int auto_increment primary key, location varchar(30) not null unique);
 
 4.	Employees TABLE:
 
-create table employees (employee_id int primary key, employee_name varchar(50) not null, gender enum('m', 'f'), age int check (age >= 18), hire_date date default (current_date), designation varchar(100), department_id int, location_id int, salary decimal(10,2), foreign key (department_id) references departments(department_id), foreign key (location_id) references location(location_id));
+create table Employees (employee_id int primary key, employee_name varchar(50) not null, gender enum('m', 'f'), age int check (age >= 18), hire_date date default (current_date), designation varchar(100), department_id int, location_id int, salary decimal(10,2), foreign key (department_id) references departments(department_id), foreign key (location_id) references location(location_id));
